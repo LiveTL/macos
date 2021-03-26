@@ -9,57 +9,57 @@
 /* MARK: Home View Strings */
 
 /* Header above current live stream list */
-"live-header" = "Live";
+"live-header" = "";
 /* Appears while loading stream list */
-"load-stream-list" = "Getting Streams...";
+"load-stream-list" = "";
 /* appears when noone is currently live */
-"no-live" = "Nobody from Hololive is live right now. Check back later!";
+"no-live" = "";
 /* Header for upcoming live stream list */
-"upcoming-header" = "Upcoming";
+"upcoming-header" = "";
 /* message that appears when no upcoming streams are scheduled */
-"no-upcoming" = "Nobody from Hololive has any scheduled streams right now. Check back later!";
+"no-upcoming" = "";
 /* Header above ended streams list */
-"end-header" = "Ended";
+"end-header" = "";
 /* appears when there are no recently ended streams */
-"no-ended" = "There are no recent Hololive streams. For more archives, check the streamer's channel.";
+"no-ended" = "";
 /* a basic, generic error message */
-"error-generic" = "An Error Occurred.";
+"error-generic" = "";
 
 /* MARK: Chat and TL views Strings */
 
 /* message that appears when loading the live chat */
-"loading-chat" = "Getting Live Chat...";
+"loading-chat" = "";
 /* message that appears when loading TLs*/
-"loading-tl" = "Getting Translations...";
+"loading-tl" = "";
 
 /* MARK: Livestream View Strings */
 
 /* message that appears while the video is loading */
-"video-load" = "Hang tight just one second, m'kay?";
+"video-load" = "";
 
 /* MARK: Settings View Strings */
 
 /* name of Translator settings tab */
-"tl-tab" = "Translators";
+"tl-tab" = "";
 /* name of Appearence settings tab */
-"appearence-tab" = "Appearance";
+"appearence-tab" = "";
 /* language picker label */
-"language-picker" = "Language:";
+"language-picker" = "";
 /* toggle that enables showing mod messages */
-"mod-toggle" = "Show Mod Messages";
+"mod-toggle" = "";
 /* label for user defined filter list */
-"user-filter-label" = "User-Defined Filters:";
+"user-filter-label" = "";
 /* label for allowed TL list */
-"allowed-tl" = "Allowed Translators";
+"allowed-tl" = "";
 /* label for blocked TL list */
-"blocked-tl" = "Blocked Translators";
+"blocked-tl" = "";
 /* input field label that adds TLs to filter */
-"add-tl" = "Add Translator to Filter";
+"add-tl" = "";
 /* input field label that blocks TLs from filter */
-"remove-tl" = "Block Translator from Filter";
+"remove-tl" = "";
 /* toggle that enables/disables chat message timestamps */
-"time-toggle" = "Show Chat Timestamps";
+"time-toggle" = "";
 /* toggle that enables/disables live chat */
-"chat-toggle" = "Show Live Chat Panel";
+"chat-toggle" = "";
 /* toggle that enables/disables TLs */
-"tl-toggle" = "Show Translations Panel";
+"tl-toggle" = "";
