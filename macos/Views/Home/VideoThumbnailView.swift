@@ -7,6 +7,7 @@
 // import Kingfisher
 import struct Kingfisher.KFImage
 import SwiftUI
+import common
 
 struct VideoThumbnailView: View {
     @State var thumbnailId: URL

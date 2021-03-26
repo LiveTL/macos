@@ -7,8 +7,8 @@
 
 import Kingfisher
 import SwiftUI
-// import Combine
 import common
+// import Combine
 
 struct CompactChatView: View {
     @State var message: DisplayableMessage

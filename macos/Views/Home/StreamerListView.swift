@@ -22,19 +22,25 @@ struct StreamerListView: View {
     @State var rows: [GridItem] = Array(repeating: .init(.fixed(400)), count: 2)
     @State private var showAlert: Bool = false
     @State private var alertError: String? = nil
-    @State var loadingString: String = "Getting Streams..."
+    @State var loadingString: LocalizedStringKey = LocalizedStringKey("load-stream-list")
 
     var body: some View {
         ZStack {
             GeometryReader { geom in
                 ZStack {
                     if showVideoView {
-                        LiveStreamView(id: self.vidId ?? "CXArovLJ60A").isHidden(!showVideoView)
+                        LiveStreamView(id: self.vidId ?? "CXArovLJ60A")
+                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .isHidden(!showVideoView)
                     }
                     List {
-                        Section(header: Text("Live")
+                        Section(header: Text("live-header")
                             .font(.largeTitle)) {
                             if streamers != nil {
+                                if streamers?.live.first == nil {
+                                    Text("no-live")
+                                        .font(.title).padding()
+                                }
                                 LazyVGrid(columns: rows) {
                                     ForEach(streamers!.live, id: \.id) {
                                         stream in
@@ -52,9 +58,13 @@ struct StreamerListView: View {
                                     .font(.title).padding()
                             }
                         }
-                        Section(header: Text("Upcoming")
+                        Section(header: Text("upcoming-header")
                             .font(.largeTitle)) {
                             if streamers != nil {
+                                if streamers?.upcoming.first == nil {
+                                    Text("no-upcoming")
+                                        .font(.title).padding()
+                                }
                                 LazyVGrid(columns: rows) {
                                     ForEach(streamers!.upcoming, id: \.id) {
                                         stream in
@@ -72,9 +82,13 @@ struct StreamerListView: View {
                                     .font(.title).padding()
                             }
                         }
-                        Section(header: Text("Ended")
+                        Section(header: Text("end-header")
                             .font(.largeTitle)) {
                             if streamers != nil {
+                                if streamers?.upcoming.first == nil {
+                                    Text("no-ended")
+                                        .font(.title).padding()
+                                }
                                 LazyVGrid(columns: rows) {
                                     ForEach(streamers!.ended, id: \.id) {
                                         stream in
@@ -104,7 +118,7 @@ struct StreamerListView: View {
                     }
                     .isHidden(showVideoView)
                     .alert(isPresented: $showAlert, content: {
-                        Alert(title: Text("An Error Occurred"), message: Text(self.alertError!), dismissButton: .cancel())
+                        Alert(title: Text("error-generic"), message: Text(self.alertError!), dismissButton: .cancel())
                     })
                 }.onChange(of: geom.size.width, perform: { value in
                     var rowsNumber = (value / 400)
@@ -117,7 +131,7 @@ struct StreamerListView: View {
 
     func handle(_ error: Error) {
         self.alertError = error.localizedDescription
-        self.loadingString = "An Error Occurred.  Get in contact if it's unique!"
+        self.loadingString = LocalizedStringKey("error-generic")
         self.showAlert = true
     }
 }

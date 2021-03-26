@@ -9,18 +9,17 @@ import Foundation
 import SwiftUI
 import SwiftyUserDefaults
 import common
-
 let services = AppServices()
 
 struct SettingsView: View {
     var body: some View {
         TabView {
             TranslatorTabView().tabItem {
-                Text("Translators")
+                Text("tl-tab")
                 Image(systemName: "character.book.closed.ja")
             }.tag(1)
             AppearanceTabView().tabItem {
-                Text("Appearance")
+                Text("appearence-tab")
                 Image(systemName: "paintbrush")
             }.tag(2)
         }.padding()
@@ -35,7 +34,7 @@ struct TranslatorTabView: View {
     @State var isOn: Bool = true
     var body: some View {
         VStack(alignment: .leading) {
-            Picker(selection: $settings.singleLanguage, label: Text("Language:")) {
+            Picker(selection: $settings.singleLanguage, label: Text("language-picker")) {
                 Text("English").tag(TranslatedLanguageTag.en)
                 Text("Japanese").tag(TranslatedLanguageTag.jp)
                 Text("Spanish").tag(TranslatedLanguageTag.es)
@@ -46,17 +45,17 @@ struct TranslatorTabView: View {
                 Text("French").tag(TranslatedLanguageTag.fr)
             }.frame(width: 200)
             Toggle(isOn: $isOn) {
-                Text("Show Mod Messages")
+                Text("mod-toggle")
             }.onChange(of: isOn, perform: { value in
                 settings.modMessages = value
                 settings.objectWillChange.send()
             }).onAppear {
                 isOn = settings.modMessages
             }
-            Text("User-Defined Filters:")
+            Text("user-filter-label")
             HStack {
                 List {
-                    Section(header: Text("Allowed Translators")) {
+                    Section(header: Text("allowed-tl")) {
                         ForEach(settings.alwaysUsers, id: \.self) { user in
                             HStack {
                                 Text(user)
@@ -76,7 +75,7 @@ struct TranslatorTabView: View {
                 }.listStyle(PlainListStyle())
                 Divider()
                 List {
-                    Section(header: Text("Blocked Translators")) {
+                    Section(header: Text("blocked-tl")) {
                         ForEach(settings.neverUsers, id: \.self) { user in
                             HStack {
                                 Text(user)
@@ -96,7 +95,7 @@ struct TranslatorTabView: View {
                 }.listStyle(PlainListStyle())
             }.padding()
             HStack {
-                TextField("Add Translator to Filter", text: $newAdd)
+                TextField("add-tl", text: $newAdd)
                 Button(action: {
                     settings.alwaysUsers.append(newAdd)
                     settings.objectWillChange.send()
@@ -106,7 +105,7 @@ struct TranslatorTabView: View {
                 })
             }
             HStack {
-                TextField("Block Translator from Filter", text: $newBlock)
+                TextField("remove-tl", text: $newBlock)
                 Button(action: {
                     settings.neverUsers.append(newBlock)
                     settings.objectWillChange.send()
@@ -124,16 +123,34 @@ struct AppearanceTabView: View {
     @ObservedObject var settings = SettingsServices()
     
     @State var timestampToggle: Bool = true
+    @State var chatToggle: Bool = true
+    @State var tlToggle: Bool = true
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Toggle(isOn: $timestampToggle) {
-                Text("Show Chat Timestamps")
+                Text("time-toggle")
             }.onChange(of: timestampToggle, perform: { value in
                 settings.timestamps = value
                 settings.objectWillChange.send()
             }).onAppear {
                 timestampToggle = settings.timestamps
+            }
+            Toggle(isOn: $chatToggle, label: {
+                Text("chat-toggle")
+            }).onChange(of: chatToggle, perform: { value in
+                settings.showChat = value
+                settings.objectWillChange.send()
+            }).onAppear(){
+                chatToggle = settings.showChat
+            }
+            Toggle(isOn: $tlToggle, label: {
+                Text("tl-toggle")
+            }).onChange(of: tlToggle, perform: { value in
+                settings.showTls = value
+                settings.objectWillChange.send()
+            }).onAppear(){
+                chatToggle = settings.showTls
             }
         }
     }

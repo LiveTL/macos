@@ -2,10 +2,11 @@
 //  macosApp.swift
 //  macos
 //
-//  Created by Mason Phillips on 3/24/21.
+//  Created by Andrew Glaze on 2/5/21.
 //
 
 import SwiftUI
+import XCDYouTubeKit
 
 @main
 struct macosApp: App {

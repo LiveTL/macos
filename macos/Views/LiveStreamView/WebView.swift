@@ -23,7 +23,7 @@ struct WebView: NSViewRepresentable {
         webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0"
         // Inject custom JS
         do {
-            let path = Bundle.main.path(forResource: "WindowInjector", ofType: "js") ?? ""
+            let path = Bundle.main.resourcePath! + "/common_common.bundle/Contents/Resources/WindowInjector.js"
             let js = try String(contentsOfFile: path, encoding: .utf8)
             let script = WKUserScript(source: js, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
 

@@ -23,10 +23,12 @@ struct LiveStreamView: View {
     @State var id: String // YT Video ID
     @State private var vidHide: Bool = true // Determines if the video View is hidden or not
     @State private var player: AVPlayer? = nil // the Video Player Object
-    @State private var loadMessage: String = "Hang tight just one second, m'kay?   " // The message on the load screen
+    @State private var loadMessage: LocalizedStringKey = LocalizedStringKey("video-load") // The message on the load screen
     @State private var chatUrl = URL(string: "https://www.google.com")!
     @State private var showAlert: Bool = false
     @State private var alertError: String? = nil
+    @State private var showTL: Bool = SettingsServices().showTls
+    @State private var showChat: Bool = SettingsServices().showChat
 
     // Program Stuff
     var model = WatchModel(AppServices())
@@ -60,11 +62,17 @@ struct LiveStreamView: View {
                         .onReceive(self.model.chatURLDriver.publisher, perform: {
                             self.chatUrl = $0
                         })
-                        .hidden()
-                        .frame(width: 0, height: 0)
+                        .layoutPriority(3)
+                        //.hidden()
+                        //.frame(width: 0, height: 0)
+                    
                     if !vidHide {
                         VideoPlayer(player: player)
+                            .layoutPriority(2)
                             .onAppear {
+                                _ = NSApplication.shared.windows.map {
+                                    $0.title = video!.title
+                                }
                                 player = AVPlayer(url: (video?.streamURL! ?? URL(string: "https://billwurtz.com/shaving-my-piano.mp4"))!)
                                 player?.actionAtItemEnd = AVPlayer.ActionAtItemEnd.pause
                                 player?.automaticallyWaitsToMinimizeStalling = true
@@ -83,28 +91,36 @@ struct LiveStreamView: View {
                 HStack {
                     // Loading Screen
                     Text(loadMessage)
-                        .font(.largeTitle).isHidden(!vidHide)
+                        .font(.largeTitle).isHidden(!vidHide).padding(.trailing)
                     ProgressView().progressViewStyle(CircularProgressViewStyle()).isHidden(!vidHide)
                 }.padding()
             }
 
-            VSplitView {
-                // Chat(s)
-                ScrollingChatView(model: model)
-                    .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, idealHeight: 360, maxHeight: .infinity, alignment: .center)
-                ScrollingTlView(model: model)
-                    .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, idealHeight: 360, maxHeight: .infinity, alignment: .center)
-            }.alert(isPresented: self.$showAlert, content: {
-                Alert(title: Text("An Error Occurred"), message: Text(self.alertError!), dismissButton: .cancel())
-            })
+            if (self.showChat || self.showTL){
+                VSplitView {
+                    // Chat(s)
+                    if self.showChat{
+                        ScrollingChatView(model: model)
+                            .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, idealHeight: 360, maxHeight: .infinity, alignment: .center)
+                            .layoutPriority(1)
+                    }
+                    if self.showTL {
+                        ScrollingTlView(model: model)
+                            .frame(minWidth: 100, maxWidth: .infinity, minHeight: 100, idealHeight: 360, maxHeight: .infinity, alignment: .center)
+                    }
+                }
+            }
         }.onAppear {
             errorRelay.compactMap { $0 }.subscribe(onNext: handle(error:)).disposed(by: bag)
         }
+        .alert(isPresented: self.$showAlert, content: {
+            Alert(title: Text("error-generic"), message: Text(self.alertError!), dismissButton: .cancel())
+        })
     }
 
     func handle(error: Error) {
         self.alertError = error.localizedDescription
-        self.loadMessage = "An Error Occurred.  Get in contact if it's unique!   "
+        self.loadMessage = "error-generic"
         self.showAlert = true
     }
 }

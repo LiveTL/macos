@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36873014260D754800040571 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36873016260D754800040571 /* Localizable.strings */; };
+		3687301D260D76B700040571 /* text-with-image.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 3687301C260D76B700040571 /* text-with-image.rtfd */; };
 		66577412260C4E7200072F30 /* macosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66577411260C4E7200072F30 /* macosApp.swift */; };
 		66577416260C4E7300072F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66577415260C4E7300072F30 /* Assets.xcassets */; };
 		66577419260C4E7300072F30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66577418260C4E7300072F30 /* Preview Assets.xcassets */; };
@@ -25,7 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6657740E260C4E7200072F30 /* macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36873015260D754800040571 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		36873019260D75E500040571 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3687301C260D76B700040571 /* text-with-image.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = "text-with-image.rtfd"; sourceTree = "<group>"; };
+		6657740E260C4E7200072F30 /* LiveTL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveTL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66577411260C4E7200072F30 /* macosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macosApp.swift; sourceTree = "<group>"; };
 		66577415260C4E7300072F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66577418260C4E7300072F30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -56,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3687301B260D76A200040571 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3687301C260D76B700040571 /* text-with-image.rtfd */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		66577405260C4E7200072F30 = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +80,7 @@
 		6657740F260C4E7200072F30 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6657740E260C4E7200072F30 /* macos.app */,
+				6657740E260C4E7200072F30 /* LiveTL.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,8 +93,10 @@
 				66577411260C4E7200072F30 /* macosApp.swift */,
 				66577415260C4E7300072F30 /* Assets.xcassets */,
 				6657741A260C4E7300072F30 /* Info.plist */,
+				3687301B260D76A200040571 /* Resources */,
 				6657741B260C4E7300072F30 /* macos.entitlements */,
 				66577417260C4E7300072F30 /* Preview Content */,
+				36873016260D754800040571 /* Localizable.strings */,
 			);
 			path = macos;
 			sourceTree = "<group>";
@@ -163,7 +178,7 @@
 				66577483260C63E700072F30 /* Kingfisher */,
 			);
 			productName = macos;
-			productReference = 6657740E260C4E7200072F30 /* macos.app */;
+			productReference = 6657740E260C4E7200072F30 /* LiveTL.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -187,6 +202,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nb,
 			);
 			mainGroup = 66577405260C4E7200072F30;
 			packageReferences = (
@@ -207,7 +223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3687301D260D76B700040571 /* text-with-image.rtfd in Resources */,
 				66577419260C4E7300072F30 /* Preview Assets.xcassets in Resources */,
+				36873014260D754800040571 /* Localizable.strings in Resources */,
 				66577416260C4E7300072F30 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,11 +253,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		36873016260D754800040571 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36873015260D754800040571 /* en */,
+				36873019260D75E500040571 /* nb */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6657741C260C4E7300072F30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -301,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -360,7 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"macos/Preview Content\"";
-				DEVELOPMENT_TEAM = 6S4L29QT59;
+				DEVELOPMENT_TEAM = RJNC97Y8QD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macos/Info.plist;
@@ -370,7 +402,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.livetl.macos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LiveTL;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -384,7 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"macos/Preview Content\"";
-				DEVELOPMENT_TEAM = 6S4L29QT59;
+				DEVELOPMENT_TEAM = RJNC97Y8QD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macos/Info.plist;
@@ -394,7 +426,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.livetl.macos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LiveTL;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

@@ -23,11 +23,12 @@ struct ScrollingChatView: View {
                 .id(UUID())
                 .flippedUpsideDown()
             } else {
-                Text("Getting Live Chat...").padding()
+                Text("loading-chat").padding()
             }
 
         }.onReceive(model.chatDriver.publisher) { m in
             self.messages = m
+            print(m)
         }
     }
 }

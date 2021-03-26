@@ -23,7 +23,7 @@ struct ScrollingTlView: View {
                 .id(UUID())
                 .flippedUpsideDown()
             } else {
-                Text("Getting Translations...").padding()
+                Text("loading-tl")
             }
 
         }.onReceive(model.translatedChat.asDriver().publisher) { m in
