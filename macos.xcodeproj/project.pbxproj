@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		367C8537260E837F0023B6E9 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 367C8536260E837F0023B6E9 /* icon.icns */; };
+		367C8539260E837F0023B6E9 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C8538260E837F0023B6E9 /* ShareViewController.swift */; };
+		367C853C260E837F0023B6E9 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 367C853A260E837F0023B6E9 /* ShareViewController.xib */; };
+		367C8541260E837F0023B6E9 /* Translate in LiveTL.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 367C8534260E837F0023B6E9 /* Translate in LiveTL.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		36873014260D754800040571 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36873016260D754800040571 /* Localizable.strings */; };
 		3687301D260D76B700040571 /* text-with-image.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 3687301C260D76B700040571 /* text-with-image.rtfd */; };
 		66577412260C4E7200072F30 /* macosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66577411260C4E7200072F30 /* macosApp.swift */; };
@@ -26,7 +30,37 @@
 		66577484260C63E700072F30 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 66577483260C63E700072F30 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		367C853F260E837F0023B6E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66577406260C4E7200072F30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 367C8533260E837F0023B6E9;
+			remoteInfo = "Translate in LiveTL";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		367C8526260E80420023B6E9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				367C8541260E837F0023B6E9 /* Translate in LiveTL.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		367C8534260E837F0023B6E9 /* Translate in LiveTL.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Translate in LiveTL.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		367C8536260E837F0023B6E9 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		367C8538260E837F0023B6E9 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		367C853B260E837F0023B6E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareViewController.xib; sourceTree = "<group>"; };
+		367C853D260E837F0023B6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		367C853E260E837F0023B6E9 /* Translate_in_LiveTL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Translate_in_LiveTL.entitlements; sourceTree = "<group>"; };
 		36873015260D754800040571 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		36873019260D75E500040571 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3687301C260D76B700040571 /* text-with-image.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = "text-with-image.rtfd"; sourceTree = "<group>"; };
@@ -49,6 +83,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		367C8531260E837F0023B6E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6657740B260C4E7200072F30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,6 +102,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		367C8535260E837F0023B6E9 /* Translate in LiveTL */ = {
+			isa = PBXGroup;
+			children = (
+				367C8536260E837F0023B6E9 /* icon.icns */,
+				367C8538260E837F0023B6E9 /* ShareViewController.swift */,
+				367C853A260E837F0023B6E9 /* ShareViewController.xib */,
+				367C853D260E837F0023B6E9 /* Info.plist */,
+				367C853E260E837F0023B6E9 /* Translate_in_LiveTL.entitlements */,
+			);
+			path = "Translate in LiveTL";
+			sourceTree = "<group>";
+		};
 		3687301B260D76A200040571 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				66577410260C4E7200072F30 /* macos */,
+				367C8535260E837F0023B6E9 /* Translate in LiveTL */,
 				6657740F260C4E7200072F30 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				6657740E260C4E7200072F30 /* LiveTL.app */,
+				367C8534260E837F0023B6E9 /* Translate in LiveTL.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,10 +195,10 @@
 		6657746B260C639400072F30 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				6657746F260C639400072F30 /* CompactChatView.swift */,
 				6657746C260C639400072F30 /* CozyChatView.swift */,
 				6657746D260C639400072F30 /* ScrollingChatView.swift */,
 				6657746E260C639400072F30 /* ScrollingTlView.swift */,
-				6657746F260C639400072F30 /* CompactChatView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -160,6 +215,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		367C8533260E837F0023B6E9 /* Translate in LiveTL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 367C8542260E837F0023B6E9 /* Build configuration list for PBXNativeTarget "Translate in LiveTL" */;
+			buildPhases = (
+				367C8530260E837F0023B6E9 /* Sources */,
+				367C8531260E837F0023B6E9 /* Frameworks */,
+				367C8532260E837F0023B6E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Translate in LiveTL";
+			productName = "Translate in LiveTL";
+			productReference = 367C8534260E837F0023B6E9 /* Translate in LiveTL.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		6657740D260C4E7200072F30 /* macos */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6657741E260C4E7300072F30 /* Build configuration list for PBXNativeTarget "macos" */;
@@ -167,10 +239,12 @@
 				6657740A260C4E7200072F30 /* Sources */,
 				6657740B260C4E7200072F30 /* Frameworks */,
 				6657740C260C4E7200072F30 /* Resources */,
+				367C8526260E80420023B6E9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				367C8540260E837F0023B6E9 /* PBXTargetDependency */,
 			);
 			name = macos;
 			packageProductDependencies = (
@@ -187,9 +261,15 @@
 		66577406260C4E7200072F30 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					367C8533260E837F0023B6E9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					6657740D260C4E7200072F30 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -214,11 +294,21 @@
 			projectRoot = "";
 			targets = (
 				6657740D260C4E7200072F30 /* macos */,
+				367C8533260E837F0023B6E9 /* Translate in LiveTL */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		367C8532260E837F0023B6E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				367C853C260E837F0023B6E9 /* ShareViewController.xib in Resources */,
+				367C8537260E837F0023B6E9 /* icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6657740C260C4E7200072F30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +323,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		367C8530260E837F0023B6E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				367C8539260E837F0023B6E9 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6657740A260C4E7200072F30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,7 +351,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		367C8540260E837F0023B6E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 367C8533260E837F0023B6E9 /* Translate in LiveTL */;
+			targetProxy = 367C853F260E837F0023B6E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		367C853A260E837F0023B6E9 /* ShareViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				367C853B260E837F0023B6E9 /* Base */,
+			);
+			name = ShareViewController.xib;
+			sourceTree = "<group>";
+		};
 		36873016260D754800040571 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -266,6 +380,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		367C8543260E837F0023B6E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Translate in LiveTL/Translate_in_LiveTL.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RJNC97Y8QD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Translate in LiveTL/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "app.livetl.macos.Translate-in-LiveTL";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		367C8544260E837F0023B6E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Translate in LiveTL/Translate_in_LiveTL.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RJNC97Y8QD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Translate in LiveTL/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "app.livetl.macos.Translate-in-LiveTL";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		6657741C260C4E7300072F30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -386,6 +542,7 @@
 		6657741F260C4E7300072F30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macos/macos.entitlements;
@@ -410,6 +567,7 @@
 		66577420260C4E7300072F30 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macos/macos.entitlements;
@@ -434,6 +592,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		367C8542260E837F0023B6E9 /* Build configuration list for PBXNativeTarget "Translate in LiveTL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				367C8543260E837F0023B6E9 /* Debug */,
+				367C8544260E837F0023B6E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		66577409260C4E7200072F30 /* Build configuration list for PBXProject "macos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

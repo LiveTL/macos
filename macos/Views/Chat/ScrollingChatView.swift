@@ -28,7 +28,6 @@ struct ScrollingChatView: View {
 
         }.onReceive(model.chatDriver.publisher) { m in
             self.messages = m
-            print(m)
         }
     }
 }

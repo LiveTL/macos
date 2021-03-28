@@ -57,6 +57,18 @@ struct CozyChatView: View {
                 textColor = Color.black
             }
         }
+        .contextMenu(ContextMenu(menuItems: {
+            Button(action: {
+                print("ckicked TL")
+            }, label: {
+                Text("Mark user as translator")
+            })
+            Button(action: {
+                print("click block")
+            }, label: {
+                Text("Block User")
+            })
+        }))
     }
 
     func getEmojiText(_ item: DisplayableMessage) -> Text {

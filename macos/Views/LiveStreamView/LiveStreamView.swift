@@ -63,8 +63,8 @@ struct LiveStreamView: View {
                             self.chatUrl = $0
                         })
                         .layoutPriority(3)
-                        //.hidden()
-                        //.frame(width: 0, height: 0)
+                        .hidden()
+                        .frame(width: 0, height: 0)
                     
                     if !vidHide {
                         VideoPlayer(player: player)

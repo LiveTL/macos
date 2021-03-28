@@ -13,7 +13,7 @@ import common
 struct CompactChatView: View {
     @State var message: DisplayableMessage
     @State var textColor = Color.primary
-    @State var timestamps = SettingsServices().timestamps
+    @State var settings = SettingsServices()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -35,7 +35,7 @@ struct CompactChatView: View {
                         .foregroundColor(textColor)
                 }
                 Spacer()
-                if timestamps {
+                if settings.timestamps {
                     Text(message.displayTimestamp)
                         .font(.subheadline)
                         .foregroundColor(.gray)
@@ -48,6 +48,20 @@ struct CompactChatView: View {
                 textColor = Color.black
             }
         }
+        .contextMenu(ContextMenu(menuItems: {
+            Button(action: {
+                settings.alwaysUsers.append(message.displayAuthor)
+                settings.objectWillChange.send()
+            }, label: {
+                Text("Mark user as translator")
+            })
+            Button(action: {
+                settings.neverUsers.append(message.displayAuthor)
+                settings.objectWillChange.send()
+            }, label: {
+                Text("Block User")
+            })
+        }))
     }
 
     // Returns a Text() view with YTC emotes embedded in it
