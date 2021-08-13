@@ -1,1 +1,23 @@
 
+
+/* toggle that enables/disables TLs */
+"tl-toggle" = "Показать панель переводов";
+/* toggle that enables/disables chat message timestamps */
+"time-toggle" = "Показывать метки времени в чате";
+/* input field label that adds TLs to filter */
+"add-tl" = "Добавить переводчика в фильтр";
+/* label for blocked TL list */
+"blocked-tl" = "Заблокированные переводчики";
+/* language picker label */
+"language-picker" = "Язык:";
+/* name of Appearence settings tab */
+"appearence-tab" = "Внешний вид";
+
+/* MARK: Settings View Strings */
+
+/* name of Translator settings tab */
+"tl-tab" = "Переводчики";
+/* message that appears when loading TLs*/
+"loading-tl" = "Получение переводов...";
+/* a basic, generic error message */
+"error-generic" = "Произошла ошибка.";
